@@ -35,7 +35,7 @@ Pentru instalare descarcati si copiati **auto.fish.cs** in folderul **CLEO** (Ig
 
 /*
     Auto Fish LV mod with custom delay
-    Credits to Krystian and ChatGPT
+    Credits to Krystian
 */
 
 repeat

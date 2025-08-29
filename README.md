@@ -3,7 +3,7 @@
 #
 
 > ### !DISCLAIMER!
-> Modul a fost conceput pentru a face fish cu mai multe conturi in acelasi timp. Automatizarea nu este chiar completa, deoarece doar in conditii perfecte toate conturile raman in locul care trebuie6
+> Modul a fost conceput pentru a face fish cu mai multe conturi in acelasi timp. Automatizarea nu este chiar completa, deoarece doar in conditii perfecte toate conturile raman in locul care trebuie
 
 Acesta este un mod **CLEO** open-source care automatizeaza procesul de fish. Modul da **/fish** automat cand intrati in zona din afara barcii.
 

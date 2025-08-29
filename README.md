@@ -3,7 +3,7 @@
 #
 
 > ### !DISCLAIMER!
-> Modul a fost conceput pentru a face fish cu mai multe conturi in acelasi timp. Este o automatizare partiala, deoarece tot trebuie sa vinzi pestele manual de pe toate conturile.
+> Modul a fost conceput pentru a face fish cu mai multe conturi in acelasi timp. Automatizarea nu este chiar completa, deoarece doar in conditii perfecte toate conturile raman in locul care trebuie6
 
 Acesta este un mod **CLEO** open-source care automatizeaza procesul de fish. Modul da **/fish** automat cand intrati in zona din afara barcii.
 
@@ -15,7 +15,7 @@ Acesta este un mod **CLEO** open-source care automatizeaza procesul de fish. Mod
   <summary>(click to expand)</summary>
   Modul va folosi automat animatia /fall pentru conturile care stau pe capota, va opri animatia cand ajungeti la 24/7 de langa PNS si o va porni iar la plecare. Daca sunteti sofer nu aveti nevoie de animatii, deci trebuie sa dezactivati functia folosind comanda.
   </details>
-- **/setdelay [min] [max]** pentru a seta un delay (in milisecunde) de la intrarea in zona la folosirea comenzii /fish... (if you know you know)
+- **/setdelay [min] [max]** pentru a seta un delay (in milisecunde) de la intrarea in zona la folosirea comenzii /fish
 - **/bizdelay [ms]** pentru a seta un delay (in milisecunde) pentru intrarea in magazin
 
 ### Instalare

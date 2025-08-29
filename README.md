@@ -25,11 +25,14 @@ Pentru instalare descarcati si copiati **auto.fish.cs** in folderul **CLEO** (Ig
 <details>
 <summary>Codul sursa:</summary>
 
-```cpp
+```CPP
 {$CLEO}
 {$USE CLEO+}
 {$INCLUDE SF}
 {$USE bitwise}
+
+:FISHER
+03A4: name_thread 'FISHER'
 
 0000:
 
@@ -89,7 +92,7 @@ longstring var_param
 03BC: var_sphere4 = create_sphere_at -31.0246 -91.3283 1003.5469 radius 2.0        
 
 while true
-    wait 0    
+    wait 0
 
     if and
     var_enabled == 1
@@ -101,20 +104,12 @@ while true
         00ED: actor $PLAYER_ACTOR sphere 0 near_point 2637.6101 1129.2800 radius 0.75 0.75 on_foot
         then
             wait var_bizdelay
-            while true
-                if or
-                00ED: actor $PLAYER_ACTOR sphere 0 near_point 1693.9500 2207.9600 radius 0.75 0.75 on_foot
-                00ED: actor $PLAYER_ACTOR sphere 0 near_point -1789.8600 1338.6600 radius 0.75 0.75 on_foot
-                00ED: actor $PLAYER_ACTOR sphere 0 near_point 2637.6101 1129.2800 radius 0.75 0.75 on_foot
-                then  
-                    0B56: set_game_key 15 state 255
-                    wait 1
-                    0B56: set_game_key 15 state 0
-                    wait 100
-                    var_enteredStore = 1
-                    break
-                end
-            end
+                0B56: set_game_key 15 state 255
+                wait 1
+                0B56: set_game_key 15 state 0
+                wait 100
+                var_enteredStore = 1
+           
             while var_enteredStore == 1
                 wait 0
                 if var_enabled == 0
@@ -128,7 +123,7 @@ while true
                     wait 1
                     0B56: set_game_key 15 state 0
                     break
-                end  
+                end
             end
             wait 2000
             0B56: set_game_key 1 state 255
@@ -306,5 +301,7 @@ else
     chatmsg "{%x}<{%x}!!!{%x}> {%x}You are not a {%x}driver{%x} anymore, animations will be applied" -1 __WHT __RED __WHT __GRA __RED __GRA
 end
 SAMP.CmdRet()
+
+0A93: end_custom_thread
 ```
 </details>

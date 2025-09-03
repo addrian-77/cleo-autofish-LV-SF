@@ -1,4 +1,4 @@
-# Autofish LV - SF
+# Autofish LS - LV - SF
 **Pentru a descarca modul, apasati pe butonul <>Code, iar apoi pe Download ZIP**
 #
 
@@ -54,7 +54,7 @@ const
     __GRA = 0xcfcfcf
 end
 
-chatmsg "{%x}Auto Fish LV - SF {%x}mod by {%x}iAdriaN {%x}was loaded, {%x}[/setdelay <ms>]{%x}." -1 __WHT __BLU __WHT __BLU __YLW __BLU
+chatmsg "{%x}Auto Fish {%x}mod by {%x}iAdriaN {%x}was loaded, {%x}[/setdelay <ms>]{%x}." -1 __WHT __BLU __WHT __BLU __YLW __BLU
 chatmsg "{%x}Use {%x}[/autofish] {%x}to toggle the mod {%x}ON {%x}or {%x}OFF." -1 __GRA __YLW __GRA __GRN __GRA __RED             
 chatmsg "{%x}Use {%x}[/togdriver] {%x}to toggle auto animations {%x}ON {%x}or {%x}OFF." -1 __GRA __YLW __GRA __GRN __GRA __RED   
 
@@ -77,6 +77,7 @@ int var_sphere1
 int var_sphere2
 int var_sphere3
 int var_sphere4
+int var_sphere5
 int var_delay = 0 // Default delay set to 0ms
 int var_mindelay = 0
 int var_maxdelay = 0
@@ -90,10 +91,10 @@ longstring var_param
 03BC: var_sphere2 = create_sphere_at -1789.8600 1338.6600 7.1797 radius 2.0
 03BC: var_sphere3 = create_sphere_at 2637.6101 1129.2800 11.1797 radius 2.0
 03BC: var_sphere4 = create_sphere_at -31.0246 -91.3283 1003.5469 radius 2.0        
+03BC: var_sphere4 = create_sphere_at 1352.16 -1759.17 13.5078 radius 2.0        
 
 while true
     wait 0
-
     if and
     var_enabled == 1
     var_enteredStore == 0 
@@ -102,6 +103,7 @@ while true
         00ED: actor $PLAYER_ACTOR sphere 0 near_point 1693.9500 2207.9600 radius 0.75 0.75 on_foot
         00ED: actor $PLAYER_ACTOR sphere 0 near_point -1789.8600 1338.6600 radius 0.75 0.75 on_foot
         00ED: actor $PLAYER_ACTOR sphere 0 near_point 2637.6101 1129.2800 radius 0.75 0.75 on_foot
+        00ED: actor $PLAYER_ACTOR sphere 0 near_point 1352.16 -1759.17 13.5078 radius 0.75 0.75 on_foot
         then
             wait var_bizdelay
                 0B56: set_game_key 15 state 255
@@ -177,6 +179,20 @@ while true
                     var_enteredStore = 0
                     wait 20000 // Wait 15 more seconds in order not to spam the animation, we won't be back this quick anyway
                 end
+                        
+                // LS
+                if and 
+                var_posX > 350.0
+                var_posX < 409.0
+                var_posY > -2089.0 
+                var_posY < -2082.0 // min x, max x, min y, max y bounradies
+                then
+                    0209: var_delay = random_int_in_ranges var_mindelay var_maxdelay
+                    wait var_delay // Wait based on the delay set
+                    say "/fish" // Execute the /fish command
+                    var_enteredStore = 0
+                    wait 20000 // Wait 15 more seconds in order not to spam the animation, we won't be back this quick anyway
+                end
                 
                 // Check if the player entered the store area, to cancel the animation
                 // Only for LV
@@ -227,9 +243,8 @@ while true
                                 var_enteredStore = 0
                             end
                         end
-                    end  
-                end
-                 
+                    end                                     
+                end     
             end
         end
     end
